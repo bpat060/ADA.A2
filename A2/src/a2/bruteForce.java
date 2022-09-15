@@ -17,12 +17,14 @@ public class bruteForce {
 
     public static void main(String[] args) {
         //num subdivision input
-        int numSubdivision;
+        int numSubdivision = 0;
 
-        System.out.println("Enter the subdivision number: ");
-        Scanner s = new Scanner(System.in);
-        numSubdivision = s.nextInt();
-        System.out.println("Entered integer is: " + numSubdivision);
+        do {
+            System.out.println("Enter the subdivision number: ");
+            Scanner s = new Scanner(System.in);
+            numSubdivision = s.nextInt();
+            System.out.println("Entered integer is: " + numSubdivision);
+        } while (numSubdivision == 0 || numSubdivision > 12);
     }
 
 }
