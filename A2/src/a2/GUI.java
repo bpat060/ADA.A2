@@ -32,7 +32,7 @@ public class GUI extends JPanel implements ActionListener {
     private Timer timer;
     private JLabel l;
     //list of rectangles to be drawn
-    ArrayList<Rectangle> shapes = new ArrayList<Rectangle>();
+    ArrayList<lines> shapes = new ArrayList<lines>();
 
     public GUI() {
         super(new BorderLayout());
@@ -63,7 +63,7 @@ public class GUI extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == addRectangleButton) {
-            Rectangle rec = new Rectangle();
+            lines rec = new lines();
             for (int i = 0; i < 4; i++) {
                 rec.addPoint(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 4)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 4))));
             }
@@ -99,7 +99,7 @@ public class GUI extends JPanel implements ActionListener {
 
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-            for (Rectangle p : shapes) {
+            for (lines p : shapes) {
                 p.paint(g);
             }
         }

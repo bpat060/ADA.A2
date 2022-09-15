@@ -13,7 +13,7 @@ import java.awt.Point;
  *
  * @author Owner
  */
-public class Rectangle {
+public class lines {
 
     //list of points aka point[1] can consist of x=1, y=2....whatever we set it to be.
     //adding a new point is all done in GUI class
@@ -22,14 +22,14 @@ public class Rectangle {
     public int numPoints;
 
     //default constructor of a polygon
-    public Rectangle() {
+    public lines() {
         numPoints = 0;
         //point number doesnt really matter for now.
         pointList = new Point[4];
 
     }
 
-    public Rectangle(Point[] p, int n) {
+    public lines(Point[] p, int n) {
         this.pointList = p;
         this.numPoints = n;
     }
