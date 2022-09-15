@@ -16,6 +16,23 @@ public class bruteForce {
     int[][] landValue = {{20, 40, 100, 130, 150, 200}, {40, 140, 250, 320, 400, 450}, {100, 250, 350, 420, 450, 500}, {130, 320, 420, 500, 600, 700}, {150, 400, 450, 600, 700, 800}, {200, 450, 500, 700, 800, 900}};
 
     public static void main(String[] args) {
+        
+         System.out.print("input");
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("Enter a whole number.");
+            String input = sc.next();
+            int intInputValue = 0;
+            try {
+                intInputValue = Integer.parseInt(input);
+                System.out.println("Correct input, exit");
+                break;
+            } catch (NumberFormatException ne) {
+                System.out.println("Input is not a number, continue");
+            }
+        }
+        
+        
         //num subdivision input
         int numSubdivision = 0;
 
