@@ -5,6 +5,8 @@
  */
 package a2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Owner
@@ -14,7 +16,13 @@ public class bruteForce {
     int[][] landValue = {{20, 40, 100, 130, 150, 200}, {40, 140, 250, 320, 400, 450}, {100, 250, 350, 420, 450, 500}, {130, 320, 420, 500, 600, 700}, {150, 400, 450, 600, 700, 800}, {200, 450, 500, 700, 800, 900}};
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        //num subdivision input
+        int numSubdivision;
+
+        System.out.println("Enter the subdivision number: ");
+        Scanner s = new Scanner(System.in);
+        numSubdivision = s.nextInt();
+        System.out.println("Entered integer is: " + numSubdivision);
     }
 
 }
