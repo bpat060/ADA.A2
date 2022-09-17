@@ -17,31 +17,27 @@ public class bruteForce {
 
     public static void main(String[] args) {
         
-         System.out.print("input");
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            System.out.println("Enter a whole number.");
-            String input = sc.next();
-            int intInputValue = 0;
-            try {
-                intInputValue = Integer.parseInt(input);
-                System.out.println("Correct input, exit");
-                break;
-            } catch (NumberFormatException ne) {
-                System.out.println("Input is not a number, continue");
+        System.out.println("The land size is 6X3 with a value of $500.");
+        System.out.println("Below is the value for the smaller subsections of land.");
+        System.out.println("*************************************************************************************************");       
+        
+        int[][] mxn = {
+            { 20, 40, 100, 130, 150, 200 },
+            { 40, 140, 250, 320, 400, 450},
+            { 100, 250, 350, 420, 450, 500},
+            //{ 130, 320, 420, 500, 600, 700},
+            //{ 150, 400, 450, 600, 700, 800},
+            //{ 200, 450, 500, 700, 800, 900}
+        };
+ 
+        for (int n = 0; n < 3; n++) {
+            for (int m = 0; m < 6; m++) {
+                System.out.print("[" + (n + 1) + "]x[" + (m + 1) + "]= " + mxn[n][m] + "\t");
             }
+            System.out.println();
         }
         
-        
-        //num subdivision input
-        int numSubdivision = 0;
-
-        do {
-            System.out.println("Enter the subdivision number: ");
-            Scanner s = new Scanner(System.in);
-            numSubdivision = s.nextInt();
-            System.out.println("Entered integer is: " + numSubdivision);
-        } while (numSubdivision == 0 || numSubdivision > 12);
+        System.out.println("*************************************************************************************************");
     }
 
 }
