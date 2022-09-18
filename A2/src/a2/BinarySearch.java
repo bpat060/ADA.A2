@@ -44,10 +44,6 @@ class BinarySearch {
                     newarray.add(row2);*/
                     
                     newarray.add(Arrays.asList(j, i));
-
-                    for (int a=0; a<newarray.size();a++){
-                        System.out.println(newarray.get(a));
-                    }
                     
                     //Total land left 
                     if(i >= 2){
@@ -78,6 +74,10 @@ class BinarySearch {
                     
             }
         }
+        
+        for (int a=0; a<newarray.size();a++){
+                        System.out.println(newarray.get(a));
+                    }
         
     }
 }
