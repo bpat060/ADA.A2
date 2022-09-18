@@ -32,6 +32,7 @@ public class bruteForce {
  
         for (int n = 0; n < 3; n++) {
             for (int m = 0; m < 6; m++) {
+                
                 System.out.print("[" + (n + 1) + "]x[" + (m + 1) + "]= " + mxn[n][m] + "\t");
             }
             System.out.println();
