@@ -4,7 +4,10 @@
  */
 package a2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 
 /**
  *
@@ -20,6 +23,7 @@ class BinarySearch {
             { 40, 140, 250, 320, 400, 450},
             { 100, 250, 350, 420, 450, 500},
         };
+        List<List<Integer>>  newarray = new ArrayList<List<Integer>>();
         int m[] = {1, 2, 3, 4, 5, 6};
         int n[] = {1, 2, 3};
         int scost = 50;
@@ -32,6 +36,19 @@ class BinarySearch {
                 if((i+1) == mxn.length || (j+1) == mxn[i].length){
                     //System.err.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
                     
+                    
+                    List<Integer> row1 = new ArrayList<Integer>(1);
+                    /*row1.add(2);
+                    newarray.add(row1);
+                    List<Integer> row2 = new ArrayList<Integer>(2);
+                    newarray.add(row2);*/
+                    
+                    newarray.add(Arrays.asList(j, i));
+
+                    for (int a=0; a<newarray.size();a++){
+                        System.out.println(newarray.get(a));
+                    }
+                    
                     //Total land left 
                     if(i >= 2){
                         area = 5 - j;
@@ -39,7 +56,8 @@ class BinarySearch {
                     }
                     else if(j >= 5){
                         area = 2 - i;
-                        System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + (j+1) + "x" + area);
+                        System.out.println((
+                                j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + (j+1) + "x" + area);
                     }
                     else if (i == 2 && j == 5){
                         area = 0;
@@ -57,7 +75,9 @@ class BinarySearch {
                         scost = 50;
                     }
                     //System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " sCost = " + scost);
+                    
             }
         }
+        
     }
 }
