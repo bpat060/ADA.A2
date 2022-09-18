@@ -36,7 +36,7 @@ public class greedy {
         for (int i = 0; i <= (n - 1); i++) { //loop for rows
             for (int j = 0; j <= (m - 1); j++) { //loop for colums
                 //if colums = 6
-                if ((i + 1) == n) {
+                if (((i + 1) == n) && ((j + 1) < 6)) {
                     System.out.println((i + 1) + "x" + (j + 1) + " = " + landValue[i][j]
                             + " and " + (n) + "x" + (m - (j + 1)) + " = " + landValue[n - 1][m - (j + 1)]
                             + " so the subdivision cost will be " + subCost + " and it has a total land value of " + value);
