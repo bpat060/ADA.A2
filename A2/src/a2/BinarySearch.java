@@ -4,6 +4,8 @@
  */
 package a2;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Sheet
@@ -11,49 +13,51 @@ package a2;
 // Java implementation of recursive Binary Search
 class BinarySearch {
 
-    // Returns index of x if it is present in arr[l..
-    // r], else return -1
-    int binarySearch(int mxn[][], int l, int r, int x) {
-        if (r >= l) {
-            int mid = l + (r - l) / 2;
-
-            // If the element is present at the
-            // middle itself
-            if (mxn[mid][0] == x) {
-                return mid;
-            }
-
-            // If element is smaller than mid, then
-            // it can only be present in left subarray
-            if (mxn[mid][0] > x) {
-                return binarySearch(mxn, l, mid - 1, x);
-            }
-
-            // Else the element can only be present
-            // in right subarray
-            return binarySearch(mxn, mid + 1, r, x);
-        }
-
-        // We reach here when element is not present
-        // in array
-        return -1;
-    }
-
-    // Driver method to test above
+    
     public static void main(String args[]) {
-        BinarySearch ob = new BinarySearch();
         int[][] mxn = {
             { 20, 40, 100, 130, 150, 200 },
             { 40, 140, 250, 320, 400, 450},
             { 100, 250, 350, 420, 450, 500},
         };
-        int n = mxn.length;
-        int x = 40;
-        int result = ob.binarySearch(mxn, 0, n - 1, x);
-        if (result == -1) {
-            System.out.println("Element not present");
-        } else {
-            System.out.println("Element found at index " + result);
+        int m[] = {1, 2, 3, 4, 5, 6};
+        int n[] = {1, 2, 3};
+        int scost = 50;
+        int area = 0;
+        
+        for (int i = 0; i < mxn.length; i++) {
+            for (int j = 0; j < mxn[i].length; j++) {
+                
+                //1 split calculation
+                if((i+1) == mxn.length || (j+1) == mxn[i].length){
+                    //System.err.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
+                    
+                    if(mxn[i][j] == mxn[3-1][j]){
+                        scost = 150;
+                    }
+                    else if (mxn[i][j] == mxn[i][6-1]){
+                        scost = 300;
+                    }
+                    else{
+                        scost = 50;
+                    }
+                    //System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " sCost = " + scost);
+                    
+                    //Total land left 
+                    if(i >= 2){
+                        area = 5 - j;
+                        System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + area + "x" + (i+1));                
+                    }
+                    else if(j >= 5){
+                        area = 2 - i;
+                        System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + (j+1) + "x" + area);
+                    }
+                    else if (i == 2 && j == 5){
+                        area = 0;
+                        System.out.println(" area left = 0");
+                    } 
+                }
+            }
         }
     }
 }
