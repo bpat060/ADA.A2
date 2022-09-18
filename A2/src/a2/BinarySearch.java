@@ -32,17 +32,6 @@ class BinarySearch {
                 if((i+1) == mxn.length || (j+1) == mxn[i].length){
                     //System.err.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
                     
-                    if(mxn[i][j] == mxn[3-1][j]){
-                        scost = 150;
-                    }
-                    else if (mxn[i][j] == mxn[i][6-1]){
-                        scost = 300;
-                    }
-                    else{
-                        scost = 50;
-                    }
-                    //System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " sCost = " + scost);
-                    
                     //Total land left 
                     if(i >= 2){
                         area = 5 - j;
@@ -57,6 +46,17 @@ class BinarySearch {
                         System.out.println(" area left = 0");
                     } 
                 }
+                
+                if(mxn[i][j] == mxn[3-1][j]){
+                        scost = 150;
+                    }
+                    else if (mxn[i][j] == mxn[i][6-1]){
+                        scost = 300;
+                    }
+                    else{
+                        scost = 50;
+                    }
+                    //System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " sCost = " + scost);
             }
         }
     }
