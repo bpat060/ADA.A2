@@ -11,4 +11,14 @@ package a2;
  */
 public class greedy {
 
+    int[][] landValue = {{20, 40, 100, 130, 150, 200}, {40, 140, 250, 320, 400, 450}, {100, 250, 350, 420, 450, 500}, {130, 320, 420, 500, 600, 700}, {150, 400, 450, 600, 700, 800}, {200, 450, 500, 700, 800, 900}};
+
+    int divisions;
+    int n;
+    int m;
+
+    public void greedy(int n, int m, int divisions) {
+
+    }
+
 }
