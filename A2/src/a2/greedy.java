@@ -5,6 +5,9 @@
  */
 package a2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Owner
@@ -33,6 +36,8 @@ public class greedy {
 
     public static void main(String args[]) {
 
+        List<Integer> bestValue = new ArrayList<Integer>(1);
+
         int value = 0;
         int subCost = 0;
         //looping the rectangle n x m for subdivisions VERTICLE
@@ -47,6 +52,8 @@ public class greedy {
                     if ((i >= 1) && (value > (((landValue[i - 1][j - 1]) + (landValue[n - 1][m - (j + 1)])) - subCost))) {
                         bestN = i;
                         bestM = j;
+                        bestValue.set(0, i);
+                        bestValue.set(1, j);
                         //list not adding????
                     }
 
@@ -64,6 +71,7 @@ public class greedy {
                 }
             }
         }
+        System.out.println(bestValue);
         System.out.println("The best single subdivision for a " + n + " x " + m + "is:  " + bestN + " x " + bestM);
 
     }
