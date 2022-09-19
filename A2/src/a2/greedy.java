@@ -15,9 +15,7 @@ import java.util.List;
  */
 public class greedy {
 
-    static int bestN;
-    static int bestM;
-    int[] bestValue;
+    List<rectangle> bestValue = new ArrayList<>();
 
     static int[][] landValue = {{20, 40, 100, 130, 150, 200},
     {40, 140, 250, 320, 400, 450},
@@ -52,7 +50,7 @@ public class greedy {
 
     public static void main(String args[]) {
 
-        List<Integer> bestValue = new ArrayList<Integer>(1);
+        List<rectangle> bestValue = new ArrayList<>();
 
         int value = 0;
         int subCost = 0;
@@ -68,9 +66,7 @@ public class greedy {
                             + " and " + (n) + "x" + (m - (j + 1)) + " = " + landValue[n - 1][m - (j + 2)]
                             + " so the subdivision cost will be " + subCost + " and it has a total land value of " + value);
                     //adding the values to a list to print later on
-                    bestValue.add(i);
-                    bestValue.add(j);
-                    bestValue.add(value);
+                    bestValue.add(new rectangle(i, j, value));
                 }
                 //if colums is 6 and rows less than 3(HORIZONTAL subdivision)
                 if (((j + 1) == m) && ((i + 1) < n)) {
@@ -80,14 +76,14 @@ public class greedy {
                             + " and " + (n - (i + 1)) + "x" + (m) + " = " + landValue[n - (i + 2)][m - 1]
                             + " so the subdivision cost will be " + subCost + " and it has a total land value of " + value);
                     //adding values to a list to print later on
-                    bestValue.add(i);
-                    bestValue.add(j);
-                    bestValue.add(value);
+                    bestValue.add(new rectangle(i, j, value));
                 }
             }
         }
-        //printing out the max value into the list
-        System.out.println("Largest subdivision value is $" + Collections.max(bestValue));
+        //printing out the max value from the list
+        System.out.println(bestValue);
+        //rectangle max = Collections.max(bestValue);
+        //System.out.println("Largest subdivision value is $" + Collections.max(bestValue));
 
     }
 
