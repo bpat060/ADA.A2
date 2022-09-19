@@ -23,12 +23,13 @@ class BinarySearch {
             { 40, 140, 250, 320, 400, 450},
             { 100, 250, 350, 420, 450, 500},
         };
-        List<List<Integer>>  landarea1 = new ArrayList<List<Integer>>();
-        List<List<Integer>>  landarea2 = new ArrayList<List<Integer>>();
+        List<List<Integer>>  landarea1 = new ArrayList<>();
+        List<List<Integer>>  landarea2 = new ArrayList<>();
         int m[] = {1, 2, 3, 4, 5, 6};
         int n[] = {1, 2, 3};
         int scost = 50;
-        int area = 0;
+        int area;
+        int value;
         
         for (int i = 0; i < mxn.length; i++) {
             for (int j = 0; j < mxn[i].length; j++) {
@@ -37,21 +38,24 @@ class BinarySearch {
                 if((i+1) == mxn.length || (j+1) == mxn[i].length){
                     //System.err.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
                     
-                    List<Integer> landvalue1 = new ArrayList<Integer>(1);
+                    List<Integer> landvalue1 = new ArrayList<>(1);
                     landarea1.add(Arrays.asList(j+1, i+1));
                     
-                    List<Integer> landvalue2 = new ArrayList<Integer>(2);
+                    List<Integer> landvalue2 = new ArrayList<>(2);
                     //Total land left 
-                    if(i >= 2){
-                        area = 5 - j;
-                        landarea2.add(Arrays.asList(area, i+1));
-                        System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + area + "x" + (i+1));                
+                    if(i < 3){
+                        area = 5 - i;
+                        value = mxn[i][area];
+                        landarea2.add(Arrays.asList(area, i+1, value));
+                        System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j] + " area left = " + (area) + "x" + (j+1) + " === " + value); 
+                        System.out.println("Loop 1");
                     }
-                    else if(j >= 5){
+                    else if(j <= 5){
                         area = 2 - i;
-                        landarea2.add(Arrays.asList(j+1, area));
-                        System.out.println((
-                                j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + (j+1) + "x" + area);
+                        value = mxn[i][area];
+                        landarea2.add(Arrays.asList(area, j+1, value));
+                        System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j] + " area left = " + (j+1) + "x" + area + " === " + value);
+                        System.out.println("Loop 2");
                     }
                     else if (i == 2 && j == 5){
                         area = 0;
@@ -72,16 +76,14 @@ class BinarySearch {
             }
         }
         
-        int[][] arr = new int[landarea1.size()][landarea2.size()];
-
+        // int[][] arr = new int[landarea1.size()][landarea2.size()];
         // convert ArrayList into an array
-        landarea1.toArray(arr);
-        System.out.print("Array: ");
-        
-        for (int a=0; a<landarea1.size();a++){
+        //landarea1.toArray(arr);
+        //System.out.print("Array: ");
+        /*for (int a=0; a<landarea1.size();a++){
             
-            System.out.println(landarea1.get(a) + " area left = " + landarea2.get(a));
-            m[] = landarea1.get(a); 
-        }
+            System.out.println(landarea1.get(a) + " area left = " + landarea2.get(a) + " === " );
+            
+        }*/
     }
 }
