@@ -73,11 +73,9 @@ class BinarySearch {
             }
         }
         
-        
-        
         //works
         for (int a=0; a<landarea1.size();a++){
-            System.err.println("area1 = " + landarea1.get(a));
+            System.err.println("area1 = " + landarea1.indexOf(a));
         }
         for (int a=0; a<landarea2.size();a++){
             System.err.println("area2 = " + landarea2.get(a));
