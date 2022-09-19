@@ -48,10 +48,19 @@ class BinarySearch {
                         scost = 50*n;
                         tcost = (mxn[i][j] + value);
                         landarea2.add(Arrays.asList(area, i+1, value));
-                        System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
-                        System.out.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
-                        System.out.println("The total land value would be: $" + (tcost - scost));
-                        System.out.println();
+                        
+                        if((tcost-scost) > 500){
+                            System.err.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.err.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
+                            System.err.println("The total land value would be: $" + (tcost - scost));
+                            System.err.println();
+                        }
+                        else{
+                            System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.out.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
+                            System.out.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println();
+                        }
                     }
                     else if(((i + 1) < n) && ((j + 1) == m)){
                         area = 3 - (i + 1);
@@ -59,10 +68,20 @@ class BinarySearch {
                         scost = 50*m;
                         tcost = (mxn[i][j] + value);
                         landarea1.add(Arrays.asList(area, j+1, value));
-                        System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
-                        System.out.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
-                        System.out.println("The total land value would be: $" + (tcost - scost));
-                        System.out.println();
+                        
+                        if((tcost-scost > 500)){
+                            System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.out.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
+                            System.out.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println();
+                        }
+                        else{
+                            System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.out.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
+                            System.out.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println();
+                        }
+                        
                     }
                     else if (i == 2 && j == 5){
                         System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j] + " area left = 0");
@@ -74,12 +93,12 @@ class BinarySearch {
         }
         
         //works
-        for (int a=0; a<landarea1.size();a++){
-            System.err.println("area1 = " + landarea1.indexOf(a));
+        /*for (int a=0; a<landarea1.size();a++){
+            System.err.println("area1 = " + landarea1.get(a));
         }
         for (int a=0; a<landarea2.size();a++){
-            System.err.println("area2 = " + landarea2.get(a));
-        }
+            System.err.println("area1 = " + landarea2.get(a));
+        }*/
         
         // int[][] arr = new int[landarea1.size()][landarea2.size()];
         // convert ArrayList into an array
