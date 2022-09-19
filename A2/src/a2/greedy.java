@@ -6,6 +6,7 @@
 package a2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,6 +17,7 @@ public class greedy {
 
     static int bestN;
     static int bestM;
+    int[] bestValue;
 
     static int[][] landValue = {{20, 40, 100, 130, 150, 200},
     {40, 140, 250, 320, 400, 450},
@@ -34,6 +36,20 @@ public class greedy {
 
     }
 
+    public static int largestNum(int[] a, int length) {
+        int num;
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (a[i] > a[j]) {
+                    num = a[i];
+                    a[i] = a[j];
+                    a[j] = num;
+                }
+            }
+        }
+        return a[length - 1];
+    }
+
     public static void main(String args[]) {
 
         List<Integer> bestValue = new ArrayList<Integer>(1);
@@ -48,18 +64,13 @@ public class greedy {
                     subCost = 50 * n;
                     value = (((landValue[i][j]) + (landValue[n - 1][m - (j + 2)])) - subCost);
 
-                    //if current value is higher than previous value
-                    if ((i >= 1) && (value > (((landValue[i + 1][j + 1]) + (landValue[n - 1][m - (j + 1)])) - subCost))) {
-                        bestN = i;
-                        bestM = j;
-                        bestValue.set(0, i);
-                        bestValue.set(1, j);
-                        //list not adding????
-                    }
-
                     System.out.println((i + 1) + "x" + (j + 1) + " = " + landValue[i][j]
                             + " and " + (n) + "x" + (m - (j + 1)) + " = " + landValue[n - 1][m - (j + 2)]
                             + " so the subdivision cost will be " + subCost + " and it has a total land value of " + value);
+                    //adding the values to a list to print later on
+                    bestValue.add(i);
+                    bestValue.add(j);
+                    bestValue.add(value);
                 }
                 //if colums is 6 and rows less than 3(HORIZONTAL subdivision)
                 if (((j + 1) == m) && ((i + 1) < n)) {
@@ -68,11 +79,15 @@ public class greedy {
                     System.out.println((i + 1) + "x" + (j + 1) + " = " + landValue[i][j]
                             + " and " + (n - (i + 1)) + "x" + (m) + " = " + landValue[n - (i + 2)][m - 1]
                             + " so the subdivision cost will be " + subCost + " and it has a total land value of " + value);
+                    //adding values to a list to print later on
+                    bestValue.add(i);
+                    bestValue.add(j);
+                    bestValue.add(value);
                 }
             }
         }
-        System.out.println(bestValue);
-        System.out.println("The best single subdivision for a " + n + " x " + m + "is:  " + bestN + " x " + bestM);
+        //printing out the max value into the list
+        System.out.println("Largest subdivision value is $" + Collections.max(bestValue));
 
     }
 
