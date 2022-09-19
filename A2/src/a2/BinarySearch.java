@@ -14,16 +14,17 @@ import java.util.List;
  * @author Sheet
  */
 // Java implementation of recursive Binary Search
-class BinarySearch {
-
+class BinarySearch {    
     
     public static void main(String args[]) {
+        
         int[][] mxn = {
             { 20, 40, 100, 130, 150, 200 },
             { 40, 140, 250, 320, 400, 450},
             { 100, 250, 350, 420, 450, 500},
         };
-        List<List<Integer>>  newarray = new ArrayList<List<Integer>>();
+        List<List<Integer>>  landarea1 = new ArrayList<List<Integer>>();
+        List<List<Integer>>  landarea2 = new ArrayList<List<Integer>>();
         int m[] = {1, 2, 3, 4, 5, 6};
         int n[] = {1, 2, 3};
         int scost = 50;
@@ -36,22 +37,19 @@ class BinarySearch {
                 if((i+1) == mxn.length || (j+1) == mxn[i].length){
                     //System.err.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
                     
+                    List<Integer> landvalue1 = new ArrayList<Integer>(1);
+                    landarea1.add(Arrays.asList(j+1, i+1));
                     
-                    List<Integer> row1 = new ArrayList<Integer>(1);
-                    /*row1.add(2);
-                    newarray.add(row1);
-                    List<Integer> row2 = new ArrayList<Integer>(2);
-                    newarray.add(row2);*/
-                    
-                    newarray.add(Arrays.asList(j, i));
-                    
+                    List<Integer> landvalue2 = new ArrayList<Integer>(2);
                     //Total land left 
                     if(i >= 2){
                         area = 5 - j;
+                        landarea2.add(Arrays.asList(area, i+1));
                         System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + area + "x" + (i+1));                
                     }
                     else if(j >= 5){
                         area = 2 - i;
+                        landarea2.add(Arrays.asList(j+1, area));
                         System.out.println((
                                 j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " area left = " + (j+1) + "x" + area);
                     }
@@ -62,22 +60,28 @@ class BinarySearch {
                 }
                 
                 if(mxn[i][j] == mxn[3-1][j]){
-                        scost = 150;
-                    }
-                    else if (mxn[i][j] == mxn[i][6-1]){
-                        scost = 300;
-                    }
-                    else{
-                        scost = 50;
-                    }
-                    //System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " sCost = " + scost);
-                    
+                    scost = 150;
+                }
+                else if (mxn[i][j] == mxn[i][6-1]){
+                    scost = 300;
+                }
+                else{
+                    scost = 50;
+                }
+                //System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j] + " sCost = " + scost);
             }
         }
         
-        for (int a=0; a<newarray.size();a++){
-                        System.out.println(newarray.get(a));
-                    }
+        int[][] arr = new int[landarea1.size()][landarea2.size()];
+
+        // convert ArrayList into an array
+        landarea1.toArray(arr);
+        System.out.print("Array: ");
         
+        for (int a=0; a<landarea1.size();a++){
+            
+            System.out.println(landarea1.get(a) + " area left = " + landarea2.get(a));
+            m[] = landarea1.get(a); 
+        }
     }
 }

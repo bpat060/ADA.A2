@@ -49,7 +49,7 @@ public class greedy {
                     value = (((landValue[i][j]) + (landValue[n - 1][m - (j + 2)])) - subCost);
 
                     //if current value is higher than previous value
-                    if ((i >= 1) && (value > (((landValue[i - 1][j - 1]) + (landValue[n - 1][m - (j + 1)])) - subCost))) {
+                    if ((i >= 1) && (value > (((landValue[i + 1][j + 1]) + (landValue[n - 1][m - (j + 1)])) - subCost))) {
                         bestN = i;
                         bestM = j;
                         bestValue.set(0, i);
