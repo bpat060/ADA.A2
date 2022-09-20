@@ -47,9 +47,50 @@ public class bruteForce {
                 
                 //1 split calculation
                 if((i+1) == mxn.length || (j+1) == mxn[i].length){
-                System.err.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
+                    //System.out.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
+                    
+                    //Total land left 
+                    if((((i + 1) == n) && (j + 1) < m)){
+                        area = 6 - (j + 1);
+                        value = mxn[i][area - 1];
+                        scost = 50*n;
+                        tcost = (mxn[i][j] + value);
+                        //landarea2.add(Arrays.asList(area, i+1, value));
+                        
+                        if((tcost-scost) > 500){
+                            System.err.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.err.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
+                            System.err.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println(" ");
+                        }
+                        else{
+                            System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.out.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
+                            System.out.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println(" ");
+                        }
+                    }
+                    else if(((i + 1) < n) && ((j + 1) == m)){
+                        area = 3 - (i + 1);
+                        value = mxn[area - 1][j];
+                        scost = 50*m;
+                        tcost = (mxn[i][j] + value);
+                        //landarea1.add(Arrays.asList(area, j+1, value));
+                        
+                        if((tcost-scost) > 500){
+                            System.err.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.err.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
+                            System.err.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println(" ");
+                        }
+                        else{
+                            System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
+                            System.out.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
+                            System.out.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println(" ");
+                        }
+                    }
                 }
-                
             }
         }
     }
