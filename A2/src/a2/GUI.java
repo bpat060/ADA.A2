@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -27,12 +28,12 @@ import javax.swing.Timer;
  */
 public class GUI extends JPanel implements ActionListener {
 
-    private JButton addRectangleButton;
     private DrawPanel drawPanel;
     private Timer timer;
     private JLabel l;
     //list of rectangles to be drawn
-    ArrayList<lines> shapes = new ArrayList<lines>();
+    rectangle rec = new rectangle(3, 6, 500);
+    ArrayList<subdivisionLines> shapes = new ArrayList<subdivisionLines>();
 
     public GUI() {
         super(new BorderLayout());
@@ -48,10 +49,6 @@ public class GUI extends JPanel implements ActionListener {
         JPanel southPanel = new JPanel();
         add(southPanel, BorderLayout.SOUTH);
 
-        addRectangleButton = new JButton("Add Rectangle");
-        addRectangleButton.addActionListener((ActionListener) this);
-        southPanel.add(addRectangleButton);
-
         drawPanel = new DrawPanel();
         add(drawPanel, BorderLayout.CENTER);
 
@@ -60,31 +57,10 @@ public class GUI extends JPanel implements ActionListener {
 
     }
 
-    public void actionPerformed(ActionEvent e) {
-        Object source = e.getSource();
-        if (source == addRectangleButton) {
-            lines rec = new lines();
-            for (int i = 0; i < 4; i++) {
-                rec.addPoint(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 4)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 4))));
-            }
-            //adding the rec to the list of Polygons
-            shapes.add(rec);
-            //System.out.println("Points: " + rec);
-            // int x = getX();
-            for (int i = 0; i < 7; i++) {
-                // Get the object's location.
-                Point location = rec.pointList[i];
-//                // Here goes your method
-                String locationString = "v" + i + " = [" + location.x + "," + location.y + "]";
-//                // Then just print it
-                System.out.println(locationString);
-            }
-            System.out.println(l);
-        }
-        if (source == timer) {
-            drawPanel.repaint();
-        }
-
+    //once there is implementation on numbers, this will be coded
+    @Override
+    public void actionPerformed(ActionEvent arg0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private class DrawPanel extends JPanel {
@@ -95,18 +71,24 @@ public class GUI extends JPanel implements ActionListener {
             super();
             setPreferredSize(new Dimension(500, 500));
             setBackground(Color.WHITE);
+
         }
 
+        //draws land subdivisions
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-            for (lines p : shapes) {
+            //for rectangle
+            Graphics2D g2d = (Graphics2D) g;
+            g2d.drawRect(30, 50, 420, 120);
+            //for the subdivision split lines
+            for (subdivisionLines p : shapes) {
                 p.paint(g);
             }
         }
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Land Subdivision");
+        JFrame frame = new JFrame("Land Subdivisions");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(new GUI());
         frame.pack();
