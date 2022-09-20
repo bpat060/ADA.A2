@@ -22,7 +22,7 @@ public class exact {
 
     //main string
     public static void main(String args[]) {
-        //loop that goes through the n x m size rectangle given
+        //loop that goes through every split of the n x m size rectangle given
         for (int i = 0; i <= (n - 1); i++) { //loop for 3 rows
             for (int j = 0; j <= (m - 1); j++) { //loop for 5 colums
 

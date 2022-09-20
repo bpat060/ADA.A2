@@ -47,6 +47,7 @@ public class greedy {
         for (int i = 0; i <= (n - 1); i++) { //loop for rows
             for (int j = 0; j <= (m - 1); j++) { //loop for colums
                 //if rows is 3 and colums less than 6 (VERTICLE subdivision)
+                //less than 6 because we dont want 3*6 printing as it is not 2 subdivisons
                 if (((i + 1) == n) && ((j + 1) < m)) {
 
                     //calculating subcost for the verticle split
@@ -77,6 +78,7 @@ public class greedy {
         }
         //printing out the max value from the list....not sure why its printing out the last num from the array?
         rectangle max = Collections.max(bestValue);
+        //maybe need compare to and a loop for the list?
         System.out.println("Largest subdivision value is $" + max.getValue());
 
     }
