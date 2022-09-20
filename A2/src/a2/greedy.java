@@ -70,9 +70,9 @@ public class greedy {
             }
         }
         //printing out the max value from the list
-        System.out.println(bestValue);
-        //rectangle max = Collections.max(bestValue);
-        //System.out.println("Largest subdivision value is $" + Collections.max(bestValue));
+        //System.out.println(bestValue);
+        rectangle max = Collections.max(bestValue);
+        System.out.println("Largest subdivision value is $" + max.getValue());
 
     }
 

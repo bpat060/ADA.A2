@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
  *
  * @author Owner
  */
-public class rectangle extends JFrame {
+public class rectangle extends JFrame implements Comparable<rectangle> {
 
     //n and m dimensions for rectangle
     static int n, m, value;
