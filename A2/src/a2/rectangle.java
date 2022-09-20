@@ -5,12 +5,6 @@
  */
 package a2;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
 /**
  *
  * @author Owner
@@ -26,14 +20,17 @@ public class rectangle implements Comparable<rectangle> {
         this.m = m;
         this.value = value;
     }
+//getting N
 
     public int getN() {
         return n;
     }
+//getting M
 
     public int getM() {
         return m;
     }
+//getting lnd value
 
     public int getValue() {
         return value;

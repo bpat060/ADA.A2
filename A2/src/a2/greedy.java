@@ -47,10 +47,14 @@ public class greedy {
         for (int i = 0; i <= (n - 1); i++) { //loop for rows
             for (int j = 0; j <= (m - 1); j++) { //loop for colums
                 //if rows is 3 and colums less than 6 (VERTICLE subdivision)
+                //less than 6 because we dont want 3*6 printing as it is not 2 subdivisons
                 if (((i + 1) == n) && ((j + 1) < m)) {
-                    subCost = 50 * n;
-                    value = (((landValue[i][j]) + (landValue[n - 1][m - (j + 2)])) - subCost);
 
+                    //calculating subcost for the verticle split
+                    subCost = 50 * n;
+                    //calculating total land value by adding both sides and subtracting subcost.
+                    value = (((landValue[i][j]) + (landValue[n - 1][m - (j + 2)])) - subCost);
+                    //printing out the calculations for the reader to read
                     System.out.println((i + 1) + "x" + (j + 1) + " = " + landValue[i][j]
                             + " and " + (n) + "x" + (m - (j + 1)) + " = " + landValue[n - 1][m - (j + 2)]
                             + " so the subdivision cost will be " + subCost + " and it has a total land value of " + value);
@@ -59,8 +63,11 @@ public class greedy {
                 }
                 //if colums is 6 and rows less than 3(HORIZONTAL subdivision)
                 if (((j + 1) == m) && ((i + 1) < n)) {
+                    //calculating subcost for the horizontal split
                     subCost = 50 * m;
+                    //calculating total land value by adding both sides and subtracting subcost.
                     value = (((landValue[i][j]) + (landValue[n - (i + 2)][m - 1])) - subCost);
+                    //printing out the calculations for the reader to read
                     System.out.println((i + 1) + "x" + (j + 1) + " = " + landValue[i][j]
                             + " and " + (n - (i + 1)) + "x" + (m) + " = " + landValue[n - (i + 2)][m - 1]
                             + " so the subdivision cost will be " + subCost + " and it has a total land value of " + value);
@@ -69,8 +76,9 @@ public class greedy {
                 }
             }
         }
-        //printing out the max value from the list....not sure why its printing out the last num?
+        //printing out the max value from the list....not sure why its printing out the last num from the array?
         rectangle max = Collections.max(bestValue);
+        //maybe need compare to and a loop for the list?
         System.out.println("Largest subdivision value is $" + max.getValue());
 
     }
