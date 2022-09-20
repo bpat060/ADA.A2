@@ -5,8 +5,6 @@
  */
 package a2;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Owner
@@ -41,7 +39,7 @@ public class bruteForce {
             System.out.println();
         }
         System.out.println("*************************************************************************************************");
-        
+        System.out.println("Below are all the dimensions and total costs for 1 split, which is 2 subdivisions: ");
         for (int i = 0; i < mxn.length; i++) {
             for (int j = 0; j < mxn[i].length; j++) {
                 
@@ -58,14 +56,14 @@ public class bruteForce {
                         //landarea2.add(Arrays.asList(area, i+1, value));
                         
                         if((tcost-scost) > 500){
-                            System.err.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
-                            System.err.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
-                            System.err.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println((i+1) + "x" + (j+1) + " mxn = " + mxn[i][j]);
+                            System.out.println("Area left: " + (i+1) + "x" + (area) + " = " + value + ".");
+                            System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
                         }
                         else{
-                            System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
-                            System.out.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
+                            System.out.println((i+1) + "x" + (j+1) + " mxn = " + mxn[i][j]);
+                            System.out.println("Area left: " + (i+1) + "x" + (area) + " = " + value + ".");
                             System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
                         }
@@ -78,14 +76,14 @@ public class bruteForce {
                         //landarea1.add(Arrays.asList(area, j+1, value));
                         
                         if((tcost-scost) > 500){
-                            System.err.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
-                            System.err.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
-                            System.err.println("The total land value would be: $" + (tcost - scost));
+                            System.out.println((i+1) + "x" + (j+1) + " mxn = " + mxn[i][j]);
+                            System.out.println("Area left: " + area + "x" + (j+1) + " = " + value + ".");
+                            System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
                         }
                         else{
-                            System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
-                            System.out.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
+                            System.out.println((i+1) + "x" + (j+1) + " mxn = " + mxn[i][j]);
+                            System.out.println("Area left: " + area + "x" + (j+1) + " = " + value + ".");
                             System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
                         }
