@@ -49,7 +49,7 @@ class BinarySearch {
                     //System.err.println((j+1) + "x" + (i+1) + " mxn= " + mxn[i][j]);
                     
                     //Total land left 
-                    if(((j + 1) < m) && ((i + 1) == n)){
+                    if((((i + 1) == n) && (j + 1) < m)){
                         area = 6 - (j + 1);
                         value = mxn[i][area - 1];
                         scost = 50*n;
@@ -60,13 +60,14 @@ class BinarySearch {
                             System.err.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
                             System.err.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
                             System.err.println("The total land value would be: $" + (tcost - scost));
-                            System.out.println();
+                            System.out.println("Loop 1 if");
                         }
                         else{
                             System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
                             System.out.println("Area left = " + (i+1) + "x" + (area) + " = " + value + ".");
                             System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println();
+                            System.out.println("Loop 1 else");
                         }
                     }
                     else if(((i + 1) < n) && ((j + 1) == m)){
@@ -81,20 +82,21 @@ class BinarySearch {
                             System.err.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
                             System.err.println("The total land value would be: $" + (tcost - scost));
                             System.out.println();
+                            System.out.println("Loop 2 if");
                         }
                         else{
                             System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j]);
                             System.out.println("Area left = " + area + "x" + (j+1) + " = " + value + ".");
                             System.out.println("The total land value would be: $" + (tcost - scost));
-                            System.out.println();
+                            System.out.println("Loop 2 else");
                         }
                         
                     }
-                    else if (i == 2 && j == 5){
+                    /*else if ((i == 2) && (j == 5)){
                         System.out.println((i+1) + "x" + (j+1) + " mxn= " + mxn[i][j] + " area left = 0");
                         System.out.println("This is the original land area, valued at $" + mxn[n-1][m-1]);
                         System.out.println();
-                    } 
+                    } */
                 }
             }
         }
