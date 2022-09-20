@@ -21,7 +21,7 @@ public class bruteForce {
             //{ 150, 400, 450, 600, 700, 800},
             //{ 200, 450, 500, 700, 800, 900}
         };
-        //m and n are the maximum land meters 
+        //m and n are the maximum land meters m=columns and n=rows 
         int m = 6;
         int n = 3;
         //subdivision cost
@@ -57,8 +57,8 @@ public class bruteForce {
                     
                     //Total land left and total land cost
                     if((((i + 1) == n) && (j + 1) < m)){
-                        area = 6 - (j + 1);
-                        value = mxn[i][area - 1];
+                        area = m - (j + 1);
+                        value = mxn[i][area - 1]; //value of the area
                         scost = 50*n;
                         tcost = (mxn[i][j] + value);
                         //landarea2.add(Arrays.asList(area, i+1, value));
@@ -78,8 +78,8 @@ public class bruteForce {
                         }
                     }
                     else if(((i + 1) < n) && ((j + 1) == m)){
-                        area = 3 - (i + 1);
-                        value = mxn[area - 1][j];
+                        area = n - (i + 1);
+                        value = mxn[area - 1][j]; //value of the area
                         scost = 50*m;
                         tcost = (mxn[i][j] + value);
                         //landarea1.add(Arrays.asList(area, j+1, value));
