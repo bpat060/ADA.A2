@@ -34,9 +34,8 @@ public class bruteForce {
         System.out.println("The land size is 6X3 with a value of $500.");
         System.out.println("Below is the value for the smaller subsections of land.");
         System.out.println("*************************************************************************************************");
-        for (int x = 0; x < 3; x++) {
-            for (int y = 0; y < 6; y++) {
-                
+        for (int x = 0; x < mxn.length; x++) {
+            for (int y = 0; y < mxn[x].length; y++) {
                 System.out.print("[" + (x + 1) + "]x[" + (y + 1) + "]= " + mxn[x][y] + "\t");
             }
             System.out.println();
