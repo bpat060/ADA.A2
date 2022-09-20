@@ -15,8 +15,10 @@ import java.util.List;
  */
 public class greedy {
 
+    //list for the best land values for a specific size
     List<rectangle> bestValue = new ArrayList<>();
 
+    //n x m and its land values
     static int[][] landValue = {{20, 40, 100, 130, 150, 200},
     {40, 140, 250, 320, 400, 450},
     {100, 250, 350, 420, 450, 500},
@@ -24,28 +26,15 @@ public class greedy {
     {150, 400, 450, 600, 700, 800},
     {200, 450, 500, 700, 800, 900}};
 
+    //currently using only 1 subdivision and specified n and m values
     static int divisions = 1;
     static int n = 3;//rows
     static int m = 6;//columns
-    static int cost = 50;
+    static int cost = 50;//fixed cost of 50 for each meter of a subdivision
 
     //do later when taking inputs for variables
     public void greedy(int n, int m, int divisions) {
 
-    }
-
-    public static int largestNum(int[] a, int length) {
-        int num;
-        for (int i = 0; i < length; i++) {
-            for (int j = i + 1; j < length; j++) {
-                if (a[i] > a[j]) {
-                    num = a[i];
-                    a[i] = a[j];
-                    a[j] = num;
-                }
-            }
-        }
-        return a[length - 1];
     }
 
     public static void main(String args[]) {

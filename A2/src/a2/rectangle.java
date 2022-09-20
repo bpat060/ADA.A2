@@ -43,6 +43,27 @@ public class rectangle extends JFrame {
         drawRectangles(g);
     }
 
+    public int getN() {
+        return n;
+    }
+
+    public int getM() {
+        return m;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public int compareTo(rectangle o) {
+        if (this.getValue() > o.getValue()) {
+            return 1;
+        } else if (this.getValue() < o.getValue()) {
+            return -1;
+        }
+        return 0;
+    }
+
     public static void main(String[] args) throws Exception {
 
         SwingUtilities.invokeLater(new Runnable() {
