@@ -70,12 +70,12 @@ public class bruteForce {
                             System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
                         }
-                        /*else{
+                        else{
                             System.out.println((i+1) + "x" + (j+1) + " mxn = " + mxn[i][j]);
                             System.out.println("Area left: " + (i+1) + "x" + (area) + " = " + value);
                             System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
-                        }*/
+                        }
                     }
                     else if(((i + 1) < n) && ((j + 1) == m)){
                         area = 3 - (i + 1);
@@ -91,12 +91,12 @@ public class bruteForce {
                             System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
                         }
-                        /*else{
+                        else{
                             System.out.println((i+1) + "x" + (j+1) + " mxn = " + mxn[i][j]);
                             System.out.println("Area left: " + area + "x" + (j+1) + " = " + value);
                             System.out.println("The total land value would be: $" + (tcost - scost));
                             System.out.println(" ");
-                        }*/
+                        }
                     }
                 }
             }
