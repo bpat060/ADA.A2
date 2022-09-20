@@ -17,25 +17,28 @@ import javax.swing.SwingUtilities;
  */
 public class rectangle extends JFrame {
 
+    //n and m dimensions for rectangle
     static int n, m, value;
 
+    //taking in value and n and m for the list of this function for printing out rectangles.
     public rectangle(int n, int m, int value) {
         super("Land Sub-divisions");
         this.n = n;
         this.m = m;
         this.value = value;
 
+        //needs to be improvised once base calculations work
         getContentPane().setBackground(Color.WHITE);
         setSize(480, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 
+    //drawing graphics function
     void drawRectangles(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.drawRect(30, 50, 420, 120);
 
-        // code to draw rectangles goes here...
     }
 
     public void paint(Graphics g) {
@@ -55,6 +58,7 @@ public class rectangle extends JFrame {
         return value;
     }
 
+    //compare to for comparing the land value prices and getting the biggeest one to print.
     public int compareTo(rectangle o) {
         if (this.getValue() > o.getValue()) {
             return 1;

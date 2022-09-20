@@ -26,7 +26,7 @@ public class greedy {
     {150, 400, 450, 600, 700, 800},
     {200, 450, 500, 700, 800, 900}};
 
-    //currently using only 1 subdivision and specified n and m values
+    //currently using only 1 split which is 2 subdivisions and specified n and m values
     static int divisions = 1;
     static int n = 3;//rows
     static int m = 6;//columns
