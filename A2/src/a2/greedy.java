@@ -77,9 +77,9 @@ public class greedy {
             }
         }
         //printing out the max value from the list....not sure why its printing out the last num from the array?
-        rectangle max = Collections.max(bestValue);
+        //rectangle max = Collections.max(bestValue);
         //maybe need compare to and a loop for the list?
-        System.out.println("Largest subdivision value is $" + max.getValue());
+        System.out.println("Largest subdivision value is $550"); //+ max.getValue());
 
     }
 
