@@ -44,7 +44,8 @@ public class bruteForce {
             System.out.println();
         }
         System.out.println("*************************************************************************************************");
-        System.out.println("Below are all the dimensions of total costs for 1 split, which is 2 subdivisions that allow the land to be over $500 ");
+        System.out.println("Below are all the dimensions of total costs for 1 split");
+        System.out.println("Which is 2 subdivisions that allow the land to be over $500");
         System.out.println(" ");
         
         for (int i = 0; i < mxn.length; i++) {
