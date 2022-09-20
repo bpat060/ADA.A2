@@ -69,8 +69,7 @@ public class greedy {
                 }
             }
         }
-        //printing out the max value from the list
-        //System.out.println(bestValue);
+        //printing out the max value from the list....not sure why its printing out the last num?
         rectangle max = Collections.max(bestValue);
         System.out.println("Largest subdivision value is $" + max.getValue());
 

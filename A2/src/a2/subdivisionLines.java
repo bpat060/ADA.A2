@@ -13,7 +13,7 @@ import java.awt.Point;
  *
  * @author Owner
  */
-public class lines {
+public class subdivisionLines {
 
     //list of points aka point[1] can consist of x=1, y=2....whatever we set it to be.
     //adding a new point is all done in GUI class
@@ -22,14 +22,14 @@ public class lines {
     public int numPoints;
 
     //default constructor of a polygon
-    public lines() {
+    public subdivisionLines() {
         numPoints = 0;
         //point number doesnt really matter for now.
         pointList = new Point[4];
 
     }
 
-    public lines(Point[] p, int n) {
+    public subdivisionLines(Point[] p, int n) {
         this.pointList = p;
         this.numPoints = n;
     }

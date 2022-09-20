@@ -15,35 +15,16 @@ import javax.swing.SwingUtilities;
  *
  * @author Owner
  */
-public class rectangle extends JFrame implements Comparable<rectangle> {
+public class rectangle implements Comparable<rectangle> {
 
     //n and m dimensions for rectangle
     static int n, m, value;
 
     //taking in value and n and m for the list of this function for printing out rectangles.
     public rectangle(int n, int m, int value) {
-        super("Land Sub-divisions");
         this.n = n;
         this.m = m;
         this.value = value;
-
-        //needs to be improvised once base calculations work
-        getContentPane().setBackground(Color.WHITE);
-        setSize(480, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-    }
-
-    //drawing graphics function
-    void drawRectangles(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.drawRect(30, 50, 420, 120);
-
-    }
-
-    public void paint(Graphics g) {
-        super.paint(g);
-        drawRectangles(g);
     }
 
     public int getN() {
@@ -66,16 +47,6 @@ public class rectangle extends JFrame implements Comparable<rectangle> {
             return -1;
         }
         return 0;
-    }
-
-    public static void main(String[] args) throws Exception {
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new rectangle(n, m, value).setVisible(true);
-            }
-        });
     }
 
 }
